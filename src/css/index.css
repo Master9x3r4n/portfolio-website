@@ -25,6 +25,8 @@ body {
     font-size: 28px;
     background-color: #11141f;
     border-bottom: 4px solid #222238;
+    position: sticky;
+    top: 0px;
 }
 
 .nav {
@@ -47,6 +49,13 @@ body {
     height: 92%;
     display: flex;
     flex-flow: row wrap;
+}
+
+.page-title {
+    font-size: 32px;
+    text-align: center;
+    width: 100%;
+    margin: 36px;
 }
 
 .left-container {
@@ -173,17 +182,28 @@ body {
     border-color: #2f2f4c;
 }
 
-.projects-container {
-    margin: 0px 24px;
+#projects-container {
+    margin: 0px 104px;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-around;
+    max-height: 600px;
+
+    /*scrolling*/
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#projects-container::-webkit-scrollbar {
+    display: none;
 }
 
 .project-container {
-    max-width: 720px;
-    margin: 64px;
+    max-width: 640px;
+    height: 250px;
+    margin: 24px;
     border: 3px solid #222238;
     background-color: #27273f;
     padding: 28px;
