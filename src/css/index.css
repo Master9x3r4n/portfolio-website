@@ -34,6 +34,15 @@ body {
     width: 50%;
 }
 
+.nav-link {
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+
 .main-content {
     height: 92%;
     display: flex;
@@ -79,7 +88,11 @@ body {
     gap: 12px;
 }
 
-
 .link-name {
     font-weight: 600;
+}
+
+.right-content {
+    display: flex;
+    flex-flow: column nowrap;
 }
