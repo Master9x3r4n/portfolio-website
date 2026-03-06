@@ -3,6 +3,7 @@ import projects from "./data/project_data.js";
 
 const containerEl = $("#projects-container");
 
+//Render the indivdual project html
 const renderProject = (project) => {
     const firstHalf = `
         <div class="project-container">
@@ -37,8 +38,8 @@ const renderProject = (project) => {
     return firstHalf + labels + secondHalf
 }
 
+//Render each project in projects as an html
 const renderProjects = () => {
-
     containerEl.html(" ");
     for (let j = 0; j < projects.length; j ++) {
         containerEl.append(renderProject(projects[j]));
