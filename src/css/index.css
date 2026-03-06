@@ -6,7 +6,6 @@
     box-sizing: border-box;
     font-family: "JetBrains Mono", "Lucida Sans", monospace;
     color: white;
-    /* border: 1px solid black; */
 }
 
 body {
@@ -20,13 +19,14 @@ body {
     align-items: center;
     flex: 1;
     width: 100%;
-    height:8%;
+    height: 8%;
     padding: 16px 64px;
     font-size: 28px;
     background-color: #11141f;
     border-bottom: 4px solid #222238;
     position: sticky;
     top: 0px;
+    z-index: 100;
 }
 
 .nav {
@@ -46,26 +46,28 @@ body {
 }
 
 .main-content {
-    height: 92%;
+    min-height: 92vh;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap; 
+    align-items: stretch;
+    padding: 0 5%;
 }
 
 .page-title {
     font-size: 32px;
     text-align: center;
     width: 100%;
-    margin: 36px;
+    margin: 36px 0;
 }
 
 .left-container {
-    width: 40%;
-    margin-left: 5%;
+    flex: 0 0 40%;
+    min-width: 0;
 }
 
 .right-container {
-    width: 50%;
-    margin-right: 5%;
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 .left-container, .right-container {
@@ -80,13 +82,14 @@ body {
     display: flex;
     flex-flow: column nowrap;
     gap: 28px;
+    width: 100%;
 }
 
 .media-container {
     background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-color: #f0f0f0; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f0f0f0;
     aspect-ratio: 1 / 1;
 }
 
@@ -94,16 +97,17 @@ body {
     background-image: url("../media/stephen_lloyd.png");
     border-radius: 50%;
     border: 6px solid #222238;
-    height: 550px;
+    width: clamp(160px, 28vw, 550px);
+    height: clamp(160px, 28vw, 550px);
 }
 
 .image-container:hover {
-    border-color: #404073; 
+    border-color: #404073;
 }
-    
+
 .links-content ul {
     list-style-type: none;
-    font-size: 32px;
+    font-size: clamp(16px, 2vw, 32px);
     padding: 8px 6px;
 
     display: flex;
@@ -121,6 +125,7 @@ body {
 .link-icon {
     height: 42px;
     border-radius: 48px;
+    flex-shrink: 0;
 }
 
 .github {
@@ -144,17 +149,18 @@ body {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    font-size: 24px;
-    height: 700px;
+    font-size: clamp(13px, 1.5vw, 24px);
+    gap: 24px;
+    width: 100%;
 }
 
 .introduction {
-    font-size: 80px;
+    font-size: clamp(36px, 5.5vw, 80px);
     color: #4b4b83;
 }
 
 .greeting {
-    font-size: 100px;
+    font-size: clamp(46px, 7vw, 100px);
 }
 
 .greeting, .name {
@@ -182,15 +188,16 @@ body {
     border-color: #2f2f4c;
 }
 
+
+/* projects page */
 #projects-container {
-    margin: 0px 104px;
+    margin: 0px 26px;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-around;
     max-height: 600px;
 
-    /*scrolling*/
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -218,7 +225,6 @@ body {
     flex-flow: column nowrap;
     justify-content: space-between;
     height: 100%;
-    
 }
 
 .project-container:hover {
@@ -232,7 +238,7 @@ body {
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 16px;
-    color:#c4c4f8;
+    color: #c4c4f8;
 }
 
 .project-description {
@@ -270,8 +276,75 @@ body {
 
 .stats-container {
     text-align: left;
-    font-size: 22px;
+    font-size: clamp(13px, 1.4vw, 22px);
     display: flex;
     flex-flow: column nowrap;
     gap: 4px;
+}
+
+
+/* mobile layout */
+@media (max-width: 600px) {
+
+    #header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px 20px;
+        font-size: 18px;
+        height: auto;
+    }
+
+    .nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 24px;
+    }
+
+    .main-content {
+        flex-flow: column nowrap;
+        min-height: unset;
+    }
+
+    .left-container,
+    .right-container {
+        flex: unset;
+        width: 100%;
+        margin: 0;
+        padding: 20px 16px;
+    }
+
+    .image-container {
+        width: 220px;
+        height: 220px;
+    }
+
+    .links-content ul {
+        font-size: 20px;
+    }
+
+    .right-content {
+        gap: 16px;
+    }
+
+    .content-container {
+        padding: 18px;
+    }
+
+    #projects-container {
+        margin: 0 12px;
+        max-height: none;
+    }
+
+    .project-container {
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        margin: 12px 0;
+    }
+
+    .labels-container ul {
+        flex-wrap: wrap;
+    }
 }
