@@ -1,14 +1,5 @@
 const projects = [
     {
-        name: "Fantastic Dorms",
-        description: `
-            An apartment/dorm rating web application service. 
-            Made as a Machine Project for the CCAPDEV course AY2526 T2
-        `,
-        link: "https://github.com/Master9x3r4n/fantastic-dorms",
-        tags: ["Web Application", "Vue", "Tailwind"]
-    },
-    {
         name: "Squeaky Clean",
         description: `My first ever created game. Submission for 1TOOGAMEJAM 2025. Made using Python`,
         link: "https://github.com/Master9x3r4n/squeaky-clean",
@@ -22,6 +13,14 @@ const projects = [
         `,
         link: "https://github.com/Master9x3r4n/daily-missions",
         tags: ["Task List", "Personal", "Python"],
+    },
+    {
+        name: "Tower of Hanoi",
+        description: `
+            C# CLI Program implementation of the Tower of Hanoi game
+        `,
+        link: "https://github.com/Master9x3r4n/tower-of-hanoi-cs",
+        tags: ["CLI", "Game", "C#"],
     },
     {
         name: "Infix Calculator",
@@ -56,6 +55,15 @@ const projects = [
         description: `Machine learning algorithm that can predict if a word is English, Filipino, or Other.`,
         link: "https://github.com/metatheta/Herbie-PinoybotEdition",
         tags: ["Machine Learning", "Code Switching", "Python"],
+    },
+    {
+        name: "Fantastic Dorms",
+        description: `
+            An apartment/dorm rating web application service. 
+            Made as a Machine Project for the CCAPDEV course AY2526 T2
+        `,
+        link: "https://github.com/Master9x3r4n/fantastic-dorms",
+        tags: ["Web Application", "Vue", "Tailwind"]
     },
     {
         name: "Etch a Sketch",
